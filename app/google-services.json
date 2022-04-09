@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168999702640",
+    "project_id": "mobile-sms-service",
+    "storage_bucket": "mobile-sms-service.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168999702640:android:160e07835a78213a6064b5",
+        "android_client_info": {
+          "package_name": "com.mobilesmsservice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168999702640-8maoi8iii2m35o5om9u9rkp3m4jsu5j2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2S4y46Cy7dtQQvH0IwxXuAJVtRmhwfVk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168999702640-8maoi8iii2m35o5om9u9rkp3m4jsu5j2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

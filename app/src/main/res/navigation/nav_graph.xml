@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.mobilesmsservice.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_smsSetUpFragment"
+            app:destination="@id/smsSetUpFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_startFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsSetUpFragment"
+        android:name="com.mobilesmsservice.fragments.SmsSetUpFragment"
+        android:label="fragment_sms_set_up"
+        tools:layout="@layout/fragment_sms_set_up" >
+        <action
+            android:id="@+id/action_smsSetUpFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.mobilesmsservice.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_apiFragment"
+            app:destination="@id/apiFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_whatsappManageFragment"
+            app:destination="@id/whatsappManageFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_mainFragment_to_smsManageFragment"
+            app:destination="@id/smsManageFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_mainFragment_to_accountManageFragment"
+            app:destination="@id/accountManageFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/apiFragment"
+        android:name="com.mobilesmsservice.fragments.ApiFragment"
+        android:label="fragment_api"
+        tools:layout="@layout/fragment_api" />
+    <fragment
+        android:id="@+id/whatsappManageFragment"
+        android:name="com.mobilesmsservice.fragments.WhatsappManageFragment"
+        android:label="fragment_whatsapp_manage"
+        tools:layout="@layout/fragment_whatsapp_manage" />
+    <fragment
+        android:id="@+id/smsManageFragment"
+        android:name="com.mobilesmsservice.fragments.SmsManageFragment"
+        android:label="fragment_sms_manage"
+        tools:layout="@layout/fragment_sms_manage" />
+    <fragment
+        android:id="@+id/accountManageFragment"
+        android:name="com.mobilesmsservice.fragments.AccountManageFragment"
+        android:label="fragment_account_manage"
+        tools:layout="@layout/fragment_account_manage" />
+</navigation>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.WhatsappManageFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mode"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:title="WhatsApp" />
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/profile_background"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="30dp">
+
+
+        <com.robinhood.spark.SparkView
+            android:id="@+id/sparkview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/border_background_transparent"
+            android:padding="10dp"
+            app:spark_lineColor="@color/icon_colour" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Time" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingBottom="20dp"
+        android:orientation="vertical"
+        android:layout_below="@id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="15dp"
+        android:paddingTop="20dp"
+        android:background="@drawable/profile_background"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/revoke_api_icon_foreground"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Reload Graph"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/start_whatsapp_service_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/whatsapp_service_status_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/run_icon_foreground"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/whatsapp_service_status_text"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Start Service"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
