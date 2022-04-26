@@ -30,4 +30,9 @@
     <string name="username">Username</string>
     <string name="enter_password">Enter password</string>
     <string name="submit">submit</string>
+    <string name="set_wake_up_message">Set wake up message</string>
+    <string name="phone_number">Phone number</string>
+    <string name="wake_up">Wake up</string>
+    <string name="wake_up_message">Wake up message</string>
+    <string name="message">message</string>
 </resources>

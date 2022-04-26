@@ -17,14 +17,18 @@
         <entry key="app/src/main/res/drawable/revoke_api_icon_foreground.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/ripple_transparent.xml" value="0.161" />
         <entry key="app/src/main/res/drawable/run_icon_foreground.xml" value="0.161" />
+        <entry key="app/src/main/res/drawable/scan_icon_foreground.xml" value="0.238" />
         <entry key="app/src/main/res/drawable/text_box_dark.xml" value="0.1375" />
         <entry key="app/src/main/res/drawable/text_box_light.xml" value="0.2675" />
+        <entry key="app/src/main/res/drawable/work_icon_foreground.xml" value="0.238" />
         <entry key="app/src/main/res/layout-v26/fragment_start.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/activity_qr_scanner.xml" value="0.23697916666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/layout/activity_wake_up.xml" value="0.1" />
         <entry key="app/src/main/res/layout/auth_model_view.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_account_manage.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_api.xml" value="0.25" />
@@ -34,13 +38,18 @@
         <entry key="app/src/main/res/layout/fragment_sms_manage.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_sms_set_up.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/layout/fragment_web_manage.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_whatsapp_manage.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_whatsapp_set_up.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/message.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/message_rv_layout.xml" value="0.27447916666666666" />
         <entry key="app/src/main/res/layout/message_view.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/wake_up_message_model_view.xml" value="0.5" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/icon.xml" value="0.1065" />
         <entry key="app/src/main/res/xml/config_accessibility_service.xml" value="0.27447916666666666" />
+        <entry key="app/src/main/res/xml/device_admin_sample.xml" value="0.19384057971014493" />
         <entry key="app/src/main/res/xml/my_admin.xml" value="0.12708333333333333" />
+        <entry key="app/src/main/res/xml/network_security_config.xml" value="0.1" />
       </map>
     </option>
   </component>

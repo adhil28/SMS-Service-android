@@ -151,7 +151,7 @@ public class SmsManageFragment extends Fragment {
         messagesRv.setLayoutManager(new LinearLayoutManager(getContext()));
         messagesRv.setHasFixedSize(true);
         JSONArray messages = new MessagesDatabaseHelper(getContext()).getAllData();
-        messagesRv.setAdapter(new MessagesRecyclerAdapter(messages));
+        messagesRv.setAdapter(new MessagesRecyclerAdapter(messages,messages.length()));
         initializeBroadCastReceiver();
     }
     private void initializeBroadCastReceiver() {
@@ -167,7 +167,7 @@ public class SmsManageFragment extends Fragment {
                 }
             }
         };
-        getActivity().registerReceiver(receiver,new IntentFilter("receiver"));
+        getActivity().registerReceiver(receiver,new IntentFilter("sms_receiver"));
     }
 
     @Override

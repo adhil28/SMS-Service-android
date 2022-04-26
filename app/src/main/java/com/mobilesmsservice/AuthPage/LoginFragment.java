@@ -22,11 +22,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.mobilesmsservice.MainActivity;
 import com.mobilesmsservice.R;
 import com.mobilesmsservice.helper.AlertBox;
+import com.mobilesmsservice.helper.FirebaseLogin;
 import com.mobilesmsservice.helper.Server;
 
 import org.json.JSONException;
@@ -67,12 +69,12 @@ public class LoginFragment extends Fragment {
                     jsonString.put("email",email);
                     jsonString.put("password",password);
 
-                    FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener( getActivity(),  new OnSuccessListener<InstanceIdResult>() {
+                    FirebaseMessaging.getInstance().getToken().addOnSuccessListener(new OnSuccessListener<String>() {
                         @Override
-                        public void onSuccess(InstanceIdResult instanceIdResult) {
-                            String mToken = instanceIdResult.getToken();
+                        public void onSuccess(String s) {
+                            sp.edit().putString("token",s).apply();
                             try {
-                                jsonString.put("token",mToken);
+                                jsonString.put("token",s);
                                 new Server().post(new Server().getBaseUrl() + "login", jsonString.toString(), new Callback() {
                                     @Override
                                     public void onFailure(@NonNull Call call, @NonNull IOException e) {
@@ -99,13 +101,30 @@ public class LoginFragment extends Fragment {
                                                     }
                                                 });
                                             }else {
-                                                Ed.putString("email", data.getString("email"));
-                                                Ed.putString("api", data.getString("apiKey"));
-                                                Ed.putString("active", data.getString("active"));
-                                                Ed.commit();
-                                                pd.dismiss();
-                                                startActivity(new Intent(getActivity(), MainActivity.class));
-                                                getActivity().finish();
+
+                                                new FirebaseLogin(getActivity()).signIn(email, password, new FirebaseLogin.onLoggedIn() {
+                                                    @Override
+                                                    public void success(String uid) {
+                                                        try {
+                                                            Ed.putString("email", data.getString("email"));
+                                                            Ed.putString("api", data.getString("apiKey"));
+                                                            Ed.putString("active", data.getString("active"));
+                                                            Ed.apply();
+                                                            pd.dismiss();
+                                                            startActivity(new Intent(getActivity(), MainActivity.class));
+                                                            getActivity().finish();
+                                                        }catch (Exception e){
+                                                            e.printStackTrace();
+                                                        }
+
+                                                    }
+
+                                                    @Override
+                                                    public void failure(String msg) {
+                                                        new AlertBox(getActivity()).show("Error",msg);
+                                                    }
+                                                });
+
                                             }
                                         } catch (JSONException e) {
                                             e.printStackTrace();

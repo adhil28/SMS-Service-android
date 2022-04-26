@@ -67,6 +67,13 @@
             app:launchSingleTop="false"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_mainFragment_to_webManageFragment"
+            app:destination="@id/webManageFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"/>
     </fragment>
     <fragment
         android:id="@+id/apiFragment"
@@ -88,4 +95,9 @@
         android:name="com.mobilesmsservice.fragments.AccountManageFragment"
         android:label="fragment_account_manage"
         tools:layout="@layout/fragment_account_manage" />
+    <fragment
+        android:id="@+id/webManageFragment"
+        android:name="com.mobilesmsservice.fragments.WebManageFragment"
+        android:label="fragment_web_manage"
+        tools:layout="@layout/fragment_web_manage" />
 </navigation>

@@ -33,9 +33,7 @@ public class MainFragment extends Fragment {
     private LinearLayout apiSettingsOpenBtn,whatsappSettingsOpenBtn,smsSettingsOpenBtn,accountManageOpenBtn;
     private NavController navController;
 
-    public MainFragment() {
-        // Required empty public constructor
-    }
+    public MainFragment() { }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -50,13 +48,6 @@ public class MainFragment extends Fragment {
         return view;
     }
     private void init(){
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().onBackPressed();
-            }
-        });
         initNavigation();
         initButtons();
         activity = getActivity();
@@ -109,6 +100,14 @@ public class MainFragment extends Fragment {
             public void onClick(View view) {
                 if (navController!=null){
                     navController.navigate(R.id.action_mainFragment_to_accountManageFragment);
+                }
+            }
+        });
+        view.findViewById(R.id.web_manage_open_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (navController!=null){
+                    navController.navigate(R.id.action_mainFragment_to_webManageFragment);
                 }
             }
         });

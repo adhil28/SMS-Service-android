@@ -10,6 +10,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.widget.Button;
 
+import com.google.firebase.FirebaseApp;
 import com.mobilesmsservice.AuthPage.AuthActivity;
 import com.mobilesmsservice.helper.MessagingService;
 
@@ -26,6 +27,8 @@ public class StartActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
+        FirebaseApp.initializeApp(this);
+
         ComponentName componentName = new ComponentName(
                 getApplicationContext(),
                 MessagingService.class);

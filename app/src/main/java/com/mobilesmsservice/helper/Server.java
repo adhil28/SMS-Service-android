@@ -6,19 +6,23 @@ import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Server {
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
+    public Fcm retrofitInterface;
     OkHttpClient client = new OkHttpClient();
+    String baseUrl = "https://rogue-omniscient-plot.glitch.me/";
 
-    String baseUrl = "http://192.168.1.3:3000/";
     public Server() {
     }
 
     public String getBaseUrl() {
         return baseUrl;
     }
+
     public Call post(String url, String json, Callback callback) {
         RequestBody body = RequestBody.create(JSON, json);
         Request request = new Request.Builder()
@@ -29,6 +33,8 @@ public class Server {
         call.enqueue(callback);
         return call;
     }
+
+
 
 
 }
